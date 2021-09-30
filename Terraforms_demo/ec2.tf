@@ -3,7 +3,6 @@ resource "aws_instance" "RAC-EC2" {
   ami = var.ami
   subnet_id = var.SUBNET_ID
   instance_type = var.instance_type_map[var.env]
-  associate_public_ip_address = var.associate_public_ip_address
   key_name = var.instance_keypair
   vpc_security_group_ids = [ aws_security_group.ec2-sg.id ]
   tags = merge(
